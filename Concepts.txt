@@ -1,0 +1,38 @@
+Steps we will Follow in Deployment using Kubernetes
+01) Prepare Redis Leaders Deployment 
+02) Check Pods
+03) Check Logs
+04) Prepare Redis Leader Service
+05) Check Service
+06) redis-follower-deployment
+07) Check Pods
+08) redis-follower-service
+09) Check Service
+10) Prepare frontend-deployment
+11) Check Pods with Filters
+    kubectl get pods -l app=guestbook -l tier=frontend
+12) Prepare FrontEnd Service
+13) Check Service
+14) Service Port forward   
+15) Check Application in localhost
+
+
+
+Redis
+    In-Memory Database
+    Leader --> Followers
+    Deployment --> Service
+FrontEnd(PHP)
+    GuestBook = PHP, Angular.js
+    Expose & View FrontEnd Service
+Clean Up
+    kubectl delete deployment -l app=redis
+    kubectl delete service -l app=redis
+
+    kubectl delete deployment -l app=frontend
+    kubectl delete service -l app=frontend
+
+    kubectl get pods
+
+
+YAML --> Github --> Kubernetes Cluster
